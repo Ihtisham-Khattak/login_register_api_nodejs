@@ -26,18 +26,6 @@ app.use(
   })
 );
 
-//status confirmation
-// app.use((err, req, res, next) => {
-//   const errorStatus = err.status || 500;
-//   const errorMessage = err.message || "Something went wrong";
-
-//   return res.status(errorStatus).json({
-//     status: errorStatus,
-//     message: errorMessage,
-//     success: false,
-//     stack: err.stack,
-//   });
-// });
 
 //Mongo Connection
 connectDB();
