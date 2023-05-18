@@ -7,7 +7,6 @@ const userScheme = new mongoose.Schema(
       require: true,
       max: 20,
       min: 5,
-      trim: true,
     },
 
     lastName: {
@@ -15,7 +14,6 @@ const userScheme = new mongoose.Schema(
       require: true,
       max: 20,
       min: 5,
-      trim: true,
     },
 
     userName: {
@@ -24,14 +22,12 @@ const userScheme = new mongoose.Schema(
       lowercase: true,
       index: true,
       unique: true,
-      trim: true,
     },
     email: {
       type: String,
       require: true,
       lowercase: true,
       unique: true,
-      trim: true,
     },
     hash_password: {
       type: String,
@@ -56,4 +52,5 @@ userScheme.method("authenticate", async function (password) {
     throw error;
   }
 });
-module.exports = mongoose.model("user", userScheme);
+
+module.exports = mongoose.model("User", userScheme);
