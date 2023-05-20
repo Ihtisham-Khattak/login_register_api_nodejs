@@ -80,4 +80,5 @@ const signIn = async (req, res, next) => {
     res.status(StatusCodes.BAD_REQUEST).json({ error: "No Data" });
   }
 };
+
 module.exports = { signUp, signIn };
