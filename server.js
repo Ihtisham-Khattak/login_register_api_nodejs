@@ -3,9 +3,8 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const crypto = require("crypto");
 const connectDB = require("./config/connect");
-const authUser = require("./routes/auth")
+const authUser = require("./routes/auth");
 // require("dotenv").config();
-
 
 const app = express();
 app.use(cors());
@@ -26,10 +25,12 @@ app.use(
   })
 );
 
-
 //Mongo Connection
 connectDB();
-app.use('/auth', authUser)
+app.use("/", (req, res) => {
+  res.send("This is testings");
+}); 
+app.use("/auth", authUser);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8010;
@@ -37,4 +38,4 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-module.exports = app
+module.exports = app;
