@@ -29,7 +29,7 @@ app.use(
 
 //Mongo Connection
 connectDB();
-app.use('/auth', authUser)
+app.post('/auth', authUser)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8010;
