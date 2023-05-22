@@ -27,9 +27,6 @@ app.use(
 
 //Mongo Connection
 connectDB();
-app.use("/", (req, res) => {
-  res.send("This is testings");
-}); 
 app.use("/auth", (req,res) => {
   res.send("Auth API")
 })
