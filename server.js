@@ -27,10 +27,8 @@ app.use(
 
 //Mongo Connection
 connectDB();
-app.use("/auth", (req,res) => {
-  res.send("Auth API")
-})
-// app.use("/auth", authUser);
+
+app.use("/auth", authUser);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8010;
